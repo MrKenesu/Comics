@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['sankey']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
+        data.addRows([
+          ['Black Eyeballs','Good Characters', 2],
+['Black Eyeballs','Neutral Characters', 1]
+,
+['Black Eyes','Good Characters', 235],
+['Black Eyes','Bad Characters', 297],
+['Black Eyes','Neutral Characters', 123]
+,
+['Amber Eyes','Good Characters', 2],
+['Amber Eyes','Bad Characters', 3],
+['Amber Eyes','Neutral Characters', 2]
+,
+['Orange Eyes','Good Characters', 8],
+['Orange Eyes','Bad Characters', 16],
+['Orange Eyes','Neutral Characters', 4]
+,
+['Purple Eyes','Good Characters', 11],
+['Purple Eyes','Bad Characters', 12],
+['Purple Eyes','Neutral Characters', 8]
+,
+['Green Eyes','Good Characters', 285],
+['Green Eyes','Bad Characters', 326],
+['Green Eyes','Neutral Characters', 117]
+,
+['Yellow Eyeballs','Good Characters', 2],
+['Yellow Eyeballs','Bad Characters', 3]
+,
+['Gold Eyes','Good Characters', 10],
+['Gold Eyes','Bad Characters', 5],
+['Gold Eyes','Neutral Characters', 6]
+,
+['Silver Eyes','Good Characters', 3],
+['Silver Eyes','Bad Characters', 3],
+['Silver Eyes','Neutral Characters', 1]
+,
+['Brown Eyes','Good Characters', 1135],
+['Brown Eyes','Bad Characters', 820],
+['Brown Eyes','Neutral Characters', 342]
+,
+['Violet Eyes','Good Characters', 12],
+['Violet Eyes','Bad Characters', 3],
+['Violet Eyes','Neutral Characters', 3]
+,
+['Pink Eyes','Good Characters', 9],
+['Pink Eyes','Bad Characters', 7],
+['Pink Eyes','Neutral Characters', 2]
+,
+['Variable Eyes','Good Characters', 5],
+['Variable Eyes','Bad Characters', 17],
+['Variable Eyes','Neutral Characters', 10]
+,
+['Yellow Eyes','Good Characters', 54],
+['Yellow Eyes','Bad Characters', 123],
+['Yellow Eyes','Neutral Characters', 37]
+,
+['Red Eyes','Good Characters', 84],
+['Red Eyes','Bad Characters', 306],
+['Red Eyes','Neutral Characters', 58]
+,
+['Photocellular Eyes','Good Characters', 1],
+['Photocellular Eyes','Bad Characters', 1],
+['Photocellular Eyes','Neutral Characters', 1]
+,
+['Hazel Eyes','Good Characters', 34],
+['Hazel Eyes','Bad Characters', 30],
+['Hazel Eyes','Neutral Characters', 16]
+,
+['Blue Eyes','Good Characters', 1292],
+['Blue Eyes','Reformed Criminals', 2],
+['Blue Eyes','Bad Characters', 862],
+['Blue Eyes','Neutral Characters', 388]
+,
+['No Eyes','Bad Characters', 2],
+['No Eyes','Neutral Characters', 1]
+,
+['One Eye','Good Characters', 2],
+['One Eye','Bad Characters', 8],
+['One Eye','Neutral Characters', 3]
+,
+['White Eyes','Good Characters', 83],
+['White Eyes','Bad Characters', 172],
+['White Eyes','Neutral Characters', 57]
+,
+['Grey Eyes','Good Characters', 38],
+['Grey Eyes','Bad Characters', 49],
+['Grey Eyes','Neutral Characters', 25]
+,
+['Magenta Eyes','Good Characters', 1],
+['Magenta Eyes','Bad Characters', 1]
+,
+['Multiple Eyes','Neutral Characters', 2]
+
+
+        ]);
+
+        // Sets chart options.
+    	var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
+                  '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+
+    	var options = {
+      	height: 400,
+      	width: 600,
+      	sankey: {
+        	node: {
+          	colors: colors
+        	},
+        	link: {
+          	colorMode: 'gradient',
+          	colors: colors
+        	}
+      	}
+   	 	};
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="sankey_basic" style="width: 900px; height: 300px;"></div>
+  </body>
+</html>
